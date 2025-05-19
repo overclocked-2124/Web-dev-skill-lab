@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-placeholder"><img src="https://rvce.edu.in/sites/default/files/logo_new.png" width="100PX"></div>
+                <div class="logo-placeholder"><img  width="100px" src="https://rvce.edu.in/sites/default/files/logo_new.png"></div>
                 <div class="title-section">
                     <p class="trust-name">Rashtreeya Sikshana Samithi Trust</p>
                     <h1>RV College of Engineering <sup>®</sup></h1>
@@ -24,12 +23,10 @@
                 Since 1963
             </div>
         </div>
-    
-</body>
     </header>
 
     <div class="ticker-bar">
-        <p> EduAIthon 2025 “Breaking Barries Simplifying Complex Engineering Concepts!" on May 16-18, 2025</p>
+        <p>e JRF under the ISRO Project Call for the post of Full time JRF</p>
     </div>
 
     <div class="main-wrapper">
@@ -111,5 +108,45 @@
         </aside>
     </div>
 
+    <div class="login-form-container">
+        <h2>Login</h2>
+        <form id="loginForm" action="#" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div id="loginMessage" class="login-message"></div>
+    </div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+    const messageDiv = document.getElementById('loginMessage');
+
+    if (usernameInput === 'sumukha' && passwordInput === 'password') {
+        messageDiv.textContent = 'Login Successful!';
+        messageDiv.style.color = 'green';
+        messageDiv.style.border = '1px solid green'; 
+        messageDiv.style.backgroundColor = '#e6ffe6'; 
+    } else {
+        messageDiv.textContent = 'Login Failed: Invalid username or password.';
+        messageDiv.style.color = 'red';
+        messageDiv.style.border = '1px solid red'; 
+        messageDiv.style.backgroundColor = '#ffe6e6'; 
+        document.getElementById('password').value = ''; 
+    }
+});
+</script>
 </body>
 </html>
